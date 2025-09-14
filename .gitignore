@@ -1,0 +1,17 @@
+# Python venv
+venv/
+
+# 常見暫存
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+
+# 測試報告
+htmlcov/
+.coverage
+
+# IDE
+.vscode/
+.idea/
