@@ -11,6 +11,8 @@ on:
 jobs:
   clockin:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write   # ✅ 允許 Actions push 到 gh-pages
 
     steps:
       - name: Checkout repo
