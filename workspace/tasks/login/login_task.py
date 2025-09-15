@@ -21,6 +21,11 @@ def do_login(context: dict):
     """
     使用 Step 2 存入的 login_token 與 login_action_url 做登入
     不再重複 GET /login，也不再手動拼 Cookie
+
+    🔑 新版系統要求：
+    - POST /login 必須帶 Referer = /login
+    - 必須帶 Origin = https://goodtimesdaka.com
+    - 不要再手動塞 X-XSRF-TOKEN，瀏覽器表單提交不會帶這個 header
     """
     login_action_url = context.get("login_action_url") or context.get("CLOCK_LOGIN_URL")
     referer_url = context.get("CLOCK_LOGIN_URL") or login_action_url
@@ -46,22 +51,22 @@ def do_login(context: dict):
         "password": password,
     }
 
-    # headers：先用 DEFAULT，再補 Referer / Origin / XSRF
+    # -------------------------------
+    # Headers：新版 Referer 與 Origin 規則
+    # -------------------------------
     headers = DEFAULT_HEADERS.copy()
     headers["Referer"] = referer_url
     headers["Origin"] = _origin_from(referer_url)
-
-    xsrf_token = http_client.session.cookies.get("XSRF-TOKEN")
-    if xsrf_token:
-        headers["X-XSRF-TOKEN"] = xsrf_token
+    # ⚠️ 不要再手動塞 X-XSRF-TOKEN，Cookie 由 Session 自動帶
 
     # Debug 輸出
     debug_log(debug, "login_task", f"POST URL: {login_action_url}")
-    debug_log(debug, "login_task", f"payload: {{'_token': '***MASKED***', 'username': '{username}', 'password': '***MASKED***'}}")
-    headers_dbg = dict(headers)
-    if "X-XSRF-TOKEN" in headers_dbg:
-        headers_dbg["X-XSRF-TOKEN"] = "***MASKED***"
-    debug_log(debug, "login_task", f"headers: {headers_dbg}")
+    debug_log(
+        debug,
+        "login_task",
+        f"payload: {{'_token': '***MASKED***', 'username': '{username}', 'password': '***MASKED***'}}"
+    )
+    debug_log(debug, "login_task", f"headers: {headers}")
 
     if debug:
         cookies = http_client.get_cookies()

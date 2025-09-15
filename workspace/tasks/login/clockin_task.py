@@ -3,10 +3,17 @@
 打卡任務：Step 7
 """
 
+from urllib.parse import urlsplit
 from workspace.config.error_code import ResultCode
 from workspace.tools.request import http_client
 from workspace.config.http_headers import DEFAULT_HEADERS
 from workspace.tools.printer.debug_printer import debug_log
+
+
+def _origin_from(url: str) -> str:
+    """從 URL 解析出 Origin (scheme + host)，例如 https://goodtimesdaka.com"""
+    parts = urlsplit(url)
+    return f"{parts.scheme}://{parts.netloc}" if parts.scheme and parts.netloc else ""
 
 
 def do_clockin(context: dict):
@@ -16,6 +23,11 @@ def do_clockin(context: dict):
     - payload 必須帶 _token
     - 成功回傳 (ResultCode.SUCCESS, dict)
     - 失敗回傳 (錯誤碼, None)
+
+    🔑 新版系統要求：
+    - POST /attendance/clock_in 必須帶 Referer = /attendance/ClockIn
+    - 必須帶 Origin = https://goodtimesdaka.com
+    - 不要再手動塞 X-XSRF-TOKEN，瀏覽器表單提交沒有這個 header
     """
     url = context.get("clock_url")
     clockin_token = context.get("clockin_token")
@@ -27,22 +39,18 @@ def do_clockin(context: dict):
     # payload，只需要 _token
     data = {"_token": clockin_token}
 
-    # headers：用 DEFAULT，再補 Referer / Origin / XSRF
+    # -------------------------------
+    # Headers：新版 Referer 與 Origin 規則
+    # -------------------------------
     headers = DEFAULT_HEADERS.copy()
     headers["Referer"] = context.get("CLOCK_PAGE_URL") or url
-    headers["Origin"] = "http://daka.bbnamg.com"
-
-    xsrf_token = http_client.session.cookies.get("XSRF-TOKEN")
-    if xsrf_token:
-        headers["X-XSRF-TOKEN"] = xsrf_token
+    headers["Origin"] = _origin_from(url)
+    # ⚠️ 不要再手動塞 X-XSRF-TOKEN，Cookie 由 Session 自動帶
 
     # Debug 印細節
     debug_log(debug, "clockin_task", f"打卡 URL: {url}")
     debug_log(debug, "clockin_task", f"payload: {data}")
-    headers_dbg = dict(headers)
-    if "X-XSRF-TOKEN" in headers_dbg:
-        headers_dbg["X-XSRF-TOKEN"] = "***MASKED***"
-    debug_log(debug, "clockin_task", f"headers: {headers_dbg}")
+    debug_log(debug, "clockin_task", f"headers: {headers}")
 
     if debug:
         cookies = http_client.get_cookies()

@@ -23,12 +23,14 @@ def do_get_login_token(context: dict):
     if not url:
         return ResultCode.task_env_missing_key, context
 
-    # headers：用 DEFAULT，再補 Referer / XSRF
+    # -------------------------------
+    # Headers：新版系統的 Referer 檢查
+    # - GET /login 必須帶 Referer = /attendance/ClockIn
+    #   （也就是 CLOCK_PAGE_URL）
+    # - 不要再手動塞 X-XSRF-TOKEN，Cookie 交給 requests.Session
+    # -------------------------------
     headers = DEFAULT_HEADERS.copy()
-    headers["Referer"] = url
-    xsrf_token = http_client.session.cookies.get("XSRF-TOKEN")
-    if xsrf_token:
-        headers["X-XSRF-TOKEN"] = xsrf_token
+    headers["Referer"] = context.get("CLOCK_PAGE_URL", url)
 
     # Step 1: GET login 頁
     code, resp = http_client.get(url, headers=headers)

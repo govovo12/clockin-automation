@@ -15,6 +15,10 @@ def get_clockin_token(context: dict):
     從首頁 API 抓取打卡需要的 _token
     - Input: context (必須有 CLOCK_PAGE_URL, debug)
     - Output: (錯誤碼, token 或 None)
+
+    🔑 新版系統要求：
+    - GET /attendance/ClockIn 必須帶 Referer = /login
+    - 不要再手動塞 X-XSRF-TOKEN，Session cookie 就會自動帶
     """
     url = context.get("CLOCK_PAGE_URL")
     debug = context.get("debug", False)
@@ -22,13 +26,12 @@ def get_clockin_token(context: dict):
     if not url:
         return ResultCode.tools_http_invalid_response, None
 
-    # headers：用 DEFAULT，再補 Referer / XSRF
+    # -------------------------------
+    # Headers：新版 Referer 檢查
+    # - 打卡頁 (ClockIn) 必須從 login 頁來
+    # -------------------------------
     headers = DEFAULT_HEADERS.copy()
     headers["Referer"] = context.get("CLOCK_LOGIN_URL", url)
-
-    xsrf_token = http_client.session.cookies.get("XSRF-TOKEN")
-    if xsrf_token:
-        headers["X-XSRF-TOKEN"] = xsrf_token
 
     # 1. 發送 GET 請求（Session 自動帶 Cookie）
     code, resp = http_client.get(url, headers=headers)
