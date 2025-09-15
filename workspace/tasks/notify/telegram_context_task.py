@@ -4,7 +4,7 @@
 - 從「總控制器」傳來的 main_context 抽取:
   schedule_controller_code, login_controller_code, clockin_msg, debug
 - 從 .env 讀取 (使用 env_loader):
-  TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID, ENABLE_TELEGRAM
+  TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID, ENABLE_TELEGRAM, PAGES_BASE_URL
 - 不直接修改 context，僅回傳 (ResultCode, dict)
 """
 
@@ -39,6 +39,7 @@ def build_telegram_context(main_context: dict):
     token = get_env("TELEGRAM_BOT_TOKEN")
     chat_id = get_env("TELEGRAM_CHAT_ID")
     enable_raw = get_env("ENABLE_TELEGRAM", "false")
+    pages_base_url = get_env("PAGES_BASE_URL", "")
 
     # 4) 驗證必須值
     if not token or not chat_id:
@@ -54,6 +55,7 @@ def build_telegram_context(main_context: dict):
         "TELEGRAM_BOT_TOKEN": token,
         "TELEGRAM_CHAT_ID": chat_id,
         "ENABLE_TELEGRAM": enable,
+        "PAGES_BASE_URL": pages_base_url,
     })
 
     return ResultCode.SUCCESS, result
