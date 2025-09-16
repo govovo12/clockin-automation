@@ -2,8 +2,8 @@ name: Clockin Morning
 
 on:
   schedule:
-    # 測試用：台灣時間 19:00 (UTC 11:00)
-    - cron: "0 11 * * *"
+    # 測試用：台灣時間 19:10 (UTC 11:10)
+    - cron: "10 11 * * *"
   workflow_dispatch: # 手動觸發也可以
 
 jobs:
@@ -13,20 +13,11 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
 
-      - name: Install dependencies
-        run: pip install -r requirements.txt
+      - name: Build Docker image
+        run: docker build -t clockin .
 
-      - name: Run clockin script
-        run: python main.py controller main
-
-      # 如果原本有部署/通知的步驟，也要搬過來 ↓
-      # - name: Deploy to GitHub Pages
-      #   uses: peaceiris/actions-gh-pages@v4
-      #   with:
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
-      #     publish_dir: ./report
+      - name: Run clockin inside Docker
+        run: docker run --rm clockin
