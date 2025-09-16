@@ -1,40 +1,32 @@
-name: Clockin Automation
+name: Clockin Morning
 
 on:
   schedule:
-    # 測試用：台灣時間 18:05 (UTC 10:05)
-    - cron: "5 10 * * *"
-    # 測試用：台灣時間 18:25 (UTC 10:25)
-    - cron: "25 10 * * *"
+    # 測試用：台灣時間 19:00 (UTC 11:00)
+    - cron: "0 11 * * *"
   workflow_dispatch: # 手動觸發也可以
 
-
 jobs:
-  clockin:
+  build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write   # ✅ 允許 Actions push 到 gh-pages
-
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Set up Python
+      - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: |
-          pip install -r requirements.txt
+        run: pip install -r requirements.txt
 
       - name: Run clockin script
-        run: |
-          python main.py controller main
+        run: python main.py controller main
 
-      - name: Deploy logs to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages
-          publish_dir: ./log
+      # 如果原本有部署/通知的步驟，也要搬過來 ↓
+      # - name: Deploy to GitHub Pages
+      #   uses: peaceiris/actions-gh-pages@v4
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     publish_dir: ./report
