@@ -1,0 +1,17 @@
+name: Clockin Evening
+
+on:
+  schedule:
+    # 測試用：台灣時間 19:05 (UTC 11:05)
+    - cron: "5 11 * * *"
+  workflow_dispatch: # 手動觸發也可以
+
+jobs:
+  clockin:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show UTC time
+        run: echo "Triggered at $(date -u)"
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+      - run: python main.py controller main
