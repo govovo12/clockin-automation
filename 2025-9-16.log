@@ -21,8 +21,10 @@ Step 5: 取得當前時間
 [✅ 成功] code=0 msg=操作成功
 Step 6: 選擇打卡路徑
 [✅ 成功] code=0 msg=操作成功
+Step 7: 嘗試打卡
 [✅ 成功] code=0 msg=操作成功
-[✅ 打卡訊息] 流程成功（dry run 模式，未執行打卡動作）
+Step 8: 格式化打卡訊息
+[✅ 打卡訊息] 2025-09-17 打卡成功，上班 07:56:46，下班尚未打卡
 ===Step 4: 呼叫 Telegram 控制器===
 Step 1: 建立 Telegram 專用 context
 [✅ 成功] code=0 msg=操作成功
