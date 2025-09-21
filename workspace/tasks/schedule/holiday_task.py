@@ -2,12 +2,12 @@
 任務模組：判斷今天是否為國定假日
 """
 
-import datetime
 import os
 from workspace.tools.loader.json_loader import load_json
 from workspace.config.paths import DATA_DIR
 from workspace.config.error_code import ResultCode
 from workspace.tools.printer.debug_printer import debug_log
+from workspace.tools.time.time_utils import today_str   # ✅ 改成用工具
 
 
 def check_holiday(context: dict):
@@ -17,8 +17,8 @@ def check_holiday(context: dict):
     :return: (ResultCode, dict)
     """
     debug = context.get("debug", False)
-    today = datetime.date.today().strftime("%Y%m%d")  # holiday.json 用 YYYYMMDD
-    holiday_path = os.path.join(DATA_DIR, "2025.json")  # ✅ 修正路徑
+    today = today_str("%Y%m%d")  # ✅ 使用 time_utils，固定台灣時區
+    holiday_path = os.path.join(DATA_DIR, "2025.json")
 
     # 呼叫工具讀取 JSON
     code, data = load_json(holiday_path)

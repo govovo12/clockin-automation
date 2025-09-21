@@ -22,16 +22,18 @@ from workspace.config.error_code import ResultCode
 def run_schedule_check():
     """
     行程判斷流程
-    :return: ResultCode
+    :return: (ResultCode, dict) - code 與 context
     """
     context = {}
+    context["skip_login"] = False   # 預設 False
 
     # Step 1: 載入 env 並取得 debug
     print("Step 1: 讀取環境變數 debug")
     code, context = load_debug_flag(context)
     print_result(code)
     if code != ResultCode.SUCCESS:
-        return code  # ❌ 轉傳任務模組的錯誤碼
+        context["skip_login"] = True   # 出錯 → 不用跑登入
+        return code, context
     if context.get("debug", False):
         print_context(True, "Step 1 結束時", context)
 
@@ -40,7 +42,8 @@ def run_schedule_check():
     code, context = check_holiday(context)
     print_result(code)
     if code != ResultCode.SUCCESS:
-        return code  # ❌ 轉傳任務模組的錯誤碼
+        context["skip_login"] = True   # 假日 / 出錯 → 不跑登入
+        return code, context
     if context.get("debug", False):
         print_context(True, "Step 2 結束時", context)
 
@@ -49,9 +52,11 @@ def run_schedule_check():
     code, context = check_leave(context)
     print_result(code)
     if code != ResultCode.SUCCESS:
-        return code  # ❌ 轉傳任務模組的錯誤碼
+        context["skip_login"] = True   # 請假 / 出錯 → 不跑登入
+        return code, context
     if context.get("debug", False):
         print_context(True, "Step 3 結束時", context)
 
     # ✅ 全部成功 → 控制器成功碼
-    return ResultCode.ctrl_schedule_success
+    context["skip_login"] = False
+    return ResultCode.ctrl_schedule_success, context

@@ -4,11 +4,11 @@
 """
 
 import os
-import datetime
 from workspace.config.paths import DATA_DIR
 from workspace.config.error_code import ResultCode
 from workspace.tools.loader.json_loader import load_json
 from workspace.tools.printer.debug_printer import debug_log
+from workspace.tools.time.time_utils import today_str   # ✅ 改成用工具
 
 
 def check_leave(context: dict):
@@ -20,7 +20,7 @@ def check_leave(context: dict):
     :return: (ResultCode, dict)
     """
     debug = context.get("debug", False)
-    today = datetime.date.today().strftime("%Y-%m-%d")
+    today = today_str("%Y-%m-%d")   # ✅ 固定台灣時區
     leave_path = os.path.join(DATA_DIR, "leaves.json")
 
     code, data = load_json(leave_path)
