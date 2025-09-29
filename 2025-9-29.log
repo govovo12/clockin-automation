@@ -5,8 +5,26 @@
 Step 1: 讀取環境變數 debug
 [✅ 成功] code=0 msg=操作成功
 Step 2: 判斷國定假日
-[❌ 任務失敗] code=2012 msg=今日為國定假日，不需打卡
-===Step 3: 跳過登入打卡===
+[✅ 成功] code=0 msg=操作成功
+Step 3: 判斷自訂請假日
+[✅ 成功] code=0 msg=操作成功
+===Step 3: 呼叫登入控制器===
+Step 1: 讀取環境變數並檢查
+[✅ 成功] code=0 msg=操作成功
+Step 2: 取得登入頁
+[✅ 成功] code=0 msg=操作成功
+Step 3: 登入
+[✅ 成功] code=0 msg=操作成功
+Step 4: 抓取打卡 _token
+[✅ 成功] code=0 msg=操作成功
+Step 5: 取得當前時間
+[✅ 成功] code=0 msg=操作成功
+Step 6: 選擇打卡路徑
+[✅ 成功] code=0 msg=操作成功
+Step 7: 嘗試打卡
+[✅ 成功] code=0 msg=操作成功
+Step 8: 格式化打卡訊息
+[✅ 打卡訊息] 2025-09-30 打卡成功，上班 07:56:22，下班尚未打卡
 ===Step 4: 呼叫 Telegram 控制器===
 Step 1: 建立 Telegram 專用 context
 [✅ 成功] code=0 msg=操作成功
