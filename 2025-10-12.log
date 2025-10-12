@@ -1,4 +1,4 @@
-[INFO] Logging enabled, file=/home/runner/work/clockin-automation/clockin-automation/log/2025-10-11.log
+[INFO] Logging enabled, file=/home/runner/work/clockin-automation/clockin-automation/log/2025-10-12.log
 === 開始執行打卡流程 ===
 ===Step 1: 載入環境變數 debug===
 ===Step 2: 呼叫假日判斷控制器===
