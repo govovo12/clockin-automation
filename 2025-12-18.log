@@ -1,4 +1,4 @@
-[INFO] Logging enabled, file=/home/runner/work/clockin-automation/clockin-automation/log/2025-12-17.log
+[INFO] Logging enabled, file=/home/runner/work/clockin-automation/clockin-automation/log/2025-12-18.log
 === 開始執行打卡流程 ===
 ===Step 1: 載入環境變數 debug===
 ===Step 2: 呼叫假日判斷控制器===
@@ -24,7 +24,7 @@ Step 6: 選擇打卡路徑
 Step 7: 嘗試打卡
 [✅ 成功] code=0 msg=操作成功
 Step 8: 格式化打卡訊息
-[✅ 打卡訊息] 2025-12-18 打卡成功，上班 07:56:25，下班尚未打卡
+[✅ 打卡訊息] 2025-12-18 打卡成功，上班 07:56:25，下班 17:48:24
 ===Step 4: 呼叫 Telegram 控制器===
 Step 1: 建立 Telegram 專用 context
 [✅ 成功] code=0 msg=操作成功
