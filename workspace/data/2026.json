@@ -1,0 +1,482 @@
+[
+  {
+    "date": "20260101",
+    "isHoliday": true
+  },
+  {
+    "date": "20260103",
+    "isHoliday": true
+  },
+  {
+    "date": "20260104",
+    "isHoliday": true
+  },
+  {
+    "date": "20260110",
+    "isHoliday": true
+  },
+  {
+    "date": "20260111",
+    "isHoliday": true
+  },
+  {
+    "date": "20260117",
+    "isHoliday": true
+  },
+  {
+    "date": "20260118",
+    "isHoliday": true
+  },
+  {
+    "date": "20260124",
+    "isHoliday": true
+  },
+  {
+    "date": "20260125",
+    "isHoliday": true
+  },
+  {
+    "date": "20260131",
+    "isHoliday": true
+  },
+  {
+    "date": "20260201",
+    "isHoliday": true
+  },
+  {
+    "date": "20260207",
+    "isHoliday": true
+  },
+  {
+    "date": "20260208",
+    "isHoliday": true
+  },
+  {
+    "date": "20260214",
+    "isHoliday": true
+  },
+  {
+    "date": "20260215",
+    "isHoliday": true
+  },
+  {
+    "date": "20260216",
+    "isHoliday": true
+  },
+  {
+    "date": "20260217",
+    "isHoliday": true
+  },
+  {
+    "date": "20260218",
+    "isHoliday": true
+  },
+  {
+    "date": "20260219",
+    "isHoliday": true
+  },
+  {
+    "date": "20260220",
+    "isHoliday": true
+  },
+  {
+    "date": "20260221",
+    "isHoliday": true
+  },
+  {
+    "date": "20260222",
+    "isHoliday": true
+  },
+  {
+    "date": "20260227",
+    "isHoliday": true
+  },
+  {
+    "date": "20260228",
+    "isHoliday": true
+  },
+  {
+    "date": "20260301",
+    "isHoliday": true
+  },
+  {
+    "date": "20260307",
+    "isHoliday": true
+  },
+  {
+    "date": "20260308",
+    "isHoliday": true
+  },
+  {
+    "date": "20260314",
+    "isHoliday": true
+  },
+  {
+    "date": "20260315",
+    "isHoliday": true
+  },
+  {
+    "date": "20260321",
+    "isHoliday": true
+  },
+  {
+    "date": "20260322",
+    "isHoliday": true
+  },
+  {
+    "date": "20260328",
+    "isHoliday": true
+  },
+  {
+    "date": "20260329",
+    "isHoliday": true
+  },
+  {
+    "date": "20260403",
+    "isHoliday": true
+  },
+  {
+    "date": "20260404",
+    "isHoliday": true
+  },
+  {
+    "date": "20260405",
+    "isHoliday": true
+  },
+  {
+    "date": "20260406",
+    "isHoliday": true
+  },
+  {
+    "date": "20260411",
+    "isHoliday": true
+  },
+  {
+    "date": "20260412",
+    "isHoliday": true
+  },
+  {
+    "date": "20260418",
+    "isHoliday": true
+  },
+  {
+    "date": "20260419",
+    "isHoliday": true
+  },
+  {
+    "date": "20260425",
+    "isHoliday": true
+  },
+  {
+    "date": "20260426",
+    "isHoliday": true
+  },
+  {
+    "date": "20260501",
+    "isHoliday": true
+  },
+  {
+    "date": "20260502",
+    "isHoliday": true
+  },
+  {
+    "date": "20260503",
+    "isHoliday": true
+  },
+  {
+    "date": "20260509",
+    "isHoliday": true
+  },
+  {
+    "date": "20260510",
+    "isHoliday": true
+  },
+  {
+    "date": "20260516",
+    "isHoliday": true
+  },
+  {
+    "date": "20260517",
+    "isHoliday": true
+  },
+  {
+    "date": "20260523",
+    "isHoliday": true
+  },
+  {
+    "date": "20260524",
+    "isHoliday": true
+  },
+  {
+    "date": "20260530",
+    "isHoliday": true
+  },
+  {
+    "date": "20260531",
+    "isHoliday": true
+  },
+  {
+    "date": "20260606",
+    "isHoliday": true
+  },
+  {
+    "date": "20260607",
+    "isHoliday": true
+  },
+  {
+    "date": "20260613",
+    "isHoliday": true
+  },
+  {
+    "date": "20260614",
+    "isHoliday": true
+  },
+  {
+    "date": "20260619",
+    "isHoliday": true
+  },
+  {
+    "date": "20260620",
+    "isHoliday": true
+  },
+  {
+    "date": "20260621",
+    "isHoliday": true
+  },
+  {
+    "date": "20260627",
+    "isHoliday": true
+  },
+  {
+    "date": "20260628",
+    "isHoliday": true
+  },
+  {
+    "date": "20260704",
+    "isHoliday": true
+  },
+  {
+    "date": "20260705",
+    "isHoliday": true
+  },
+  {
+    "date": "20260711",
+    "isHoliday": true
+  },
+  {
+    "date": "20260712",
+    "isHoliday": true
+  },
+  {
+    "date": "20260718",
+    "isHoliday": true
+  },
+  {
+    "date": "20260719",
+    "isHoliday": true
+  },
+  {
+    "date": "20260725",
+    "isHoliday": true
+  },
+  {
+    "date": "20260726",
+    "isHoliday": true
+  },
+  {
+    "date": "20260801",
+    "isHoliday": true
+  },
+  {
+    "date": "20260802",
+    "isHoliday": true
+  },
+  {
+    "date": "20260808",
+    "isHoliday": true
+  },
+  {
+    "date": "20260809",
+    "isHoliday": true
+  },
+  {
+    "date": "20260815",
+    "isHoliday": true
+  },
+  {
+    "date": "20260816",
+    "isHoliday": true
+  },
+  {
+    "date": "20260822",
+    "isHoliday": true
+  },
+  {
+    "date": "20260823",
+    "isHoliday": true
+  },
+  {
+    "date": "20260829",
+    "isHoliday": true
+  },
+  {
+    "date": "20260830",
+    "isHoliday": true
+  },
+  {
+    "date": "20260905",
+    "isHoliday": true
+  },
+  {
+    "date": "20260906",
+    "isHoliday": true
+  },
+  {
+    "date": "20260912",
+    "isHoliday": true
+  },
+  {
+    "date": "20260913",
+    "isHoliday": true
+  },
+  {
+    "date": "20260919",
+    "isHoliday": true
+  },
+  {
+    "date": "20260920",
+    "isHoliday": true
+  },
+  {
+    "date": "20260925",
+    "isHoliday": true
+  },
+  {
+    "date": "20260926",
+    "isHoliday": true
+  },
+  {
+    "date": "20260927",
+    "isHoliday": true
+  },
+  {
+    "date": "20260928",
+    "isHoliday": true
+  },
+  {
+    "date": "20261003",
+    "isHoliday": true
+  },
+  {
+    "date": "20261004",
+    "isHoliday": true
+  },
+  {
+    "date": "20261009",
+    "isHoliday": true
+  },
+  {
+    "date": "20261010",
+    "isHoliday": true
+  },
+  {
+    "date": "20261011",
+    "isHoliday": true
+  },
+  {
+    "date": "20261017",
+    "isHoliday": true
+  },
+  {
+    "date": "20261018",
+    "isHoliday": true
+  },
+  {
+    "date": "20261024",
+    "isHoliday": true
+  },
+  {
+    "date": "20261025",
+    "isHoliday": true
+  },
+  {
+    "date": "20261026",
+    "isHoliday": true
+  },
+  {
+    "date": "20261031",
+    "isHoliday": true
+  },
+  {
+    "date": "20261101",
+    "isHoliday": true
+  },
+  {
+    "date": "20261107",
+    "isHoliday": true
+  },
+  {
+    "date": "20261108",
+    "isHoliday": true
+  },
+  {
+    "date": "20261114",
+    "isHoliday": true
+  },
+  {
+    "date": "20261115",
+    "isHoliday": true
+  },
+  {
+    "date": "20261121",
+    "isHoliday": true
+  },
+  {
+    "date": "20261122",
+    "isHoliday": true
+  },
+  {
+    "date": "20261128",
+    "isHoliday": true
+  },
+  {
+    "date": "20261129",
+    "isHoliday": true
+  },
+  {
+    "date": "20261205",
+    "isHoliday": true
+  },
+  {
+    "date": "20261206",
+    "isHoliday": true
+  },
+  {
+    "date": "20261212",
+    "isHoliday": true
+  },
+  {
+    "date": "20261213",
+    "isHoliday": true
+  },
+  {
+    "date": "20261219",
+    "isHoliday": true
+  },
+  {
+    "date": "20261220",
+    "isHoliday": true
+  },
+  {
+    "date": "20261225",
+    "isHoliday": true
+  },
+  {
+    "date": "20261226",
+    "isHoliday": true
+  },
+  {
+    "date": "20261227",
+    "isHoliday": true
+  }
+]

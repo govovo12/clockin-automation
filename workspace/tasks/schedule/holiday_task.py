@@ -18,7 +18,9 @@ def check_holiday(context: dict):
     """
     debug = context.get("debug", False)
     today = today_str("%Y%m%d")  # ✅ 使用 time_utils，固定台灣時區
-    holiday_path = os.path.join(DATA_DIR, "2025.json")
+    year = today[:4]
+    holiday_path = os.path.join(DATA_DIR, f"{year}.json")
+
 
     # 呼叫工具讀取 JSON
     code, data = load_json(holiday_path)
