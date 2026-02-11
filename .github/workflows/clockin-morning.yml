@@ -2,8 +2,7 @@ name: Clockin Morning
 
 on:
   schedule:
-    # 正式：台灣時間 07:50 (UTC 23:50)
-    - cron: "50 23 * * *"
+    - cron: "50 22 * * *"
   workflow_dispatch:
 
 jobs:
