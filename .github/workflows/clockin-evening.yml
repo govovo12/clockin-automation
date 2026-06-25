@@ -2,8 +2,8 @@ name: Clockin Evening
 
 on:
   schedule:
-    # 正式：台灣時間 17:30 (UTC 09:30)
-    - cron: "30 9 * * *"
+    # 正式：台灣時間 17:37 (UTC 09:37)
+    - cron: "37 9 * * *"
   workflow_dispatch:
 
 jobs:
