@@ -1,0 +1,205 @@
+[INFO] Logging enabled, file=/home/runner/work/clockin-automation/clockin-automation/log/2026-6-29.log
+=== 開始執行打卡流程 ===
+===Step 1: 載入環境變數 debug===
+===Step 2: 呼叫假日判斷控制器===
+Step 1: 讀取環境變數 debug
+[✅ 成功] code=0 msg=操作成功
+[DEBUG] Step 1 結束時 context內容:
+    skip_login = False
+    debug = True
+Step 2: 判斷國定假日
+[DEBUG][holiday_task] 今天的日期: 20260629
+[DEBUG][holiday_task] json讀到的今天紀錄: None
+[✅ 成功] code=0 msg=操作成功
+[DEBUG] Step 2 結束時 context內容:
+    skip_login = False
+    debug = True
+Step 3: 判斷自訂請假日
+[DEBUG][leave_task] 今天的日期: 2026-06-29
+[DEBUG][leave_task] json讀到的日期: ['2025-12-30', '2025-12-31', '2026-01-01', '2026-01-02', '2026-01-03', '2026-01-04']
+[✅ 成功] code=0 msg=操作成功
+[DEBUG] Step 3 結束時 context內容:
+    skip_login = False
+    debug = True
+===Step 3: 呼叫登入控制器===
+Step 1: 讀取環境變數並檢查
+[DEBUG][env_check_task] 讀取到的環境變數：
+[DEBUG][env_check_task]   CLOCK_USERNAME = E2511A
+[DEBUG][env_check_task]   CLOCK_PASSWORD = T12845
+[DEBUG][env_check_task]   CLOCK_LOGIN_URL = https://goodtimesdaka.com/login
+[DEBUG][env_check_task]   CLOCK_IN_URL = https://goodtimesdaka.com/attendance/clock_in
+[DEBUG][env_check_task]   CLOCK_OUT_URL = https://goodtimesdaka.com/attendance/clock_out
+[DEBUG][env_check_task]   CLOCK_PAGE_URL = https://goodtimesdaka.com/attendance/ClockIn
+[DEBUG][env_check_task]   debug = True
+[DEBUG][env_check_task]   dry_run = True
+[✅ 成功] code=0 msg=操作成功
+[DEBUG] Step 1 結束時 context內容:
+    CLOCK_USERNAME = E2511A
+    CLOCK_PASSWORD = ******
+    CLOCK_LOGIN_URL = https://goodtimesdaka.com/login
+    CLOCK_IN_URL = https://goodtimesdaka.com/attendance/clock_in
+    CLOCK_OUT_URL = https://goodtimesdaka.com/attendance/clock_out
+    CLOCK_PAGE_URL = https://goodtimesdaka.com/attendance/ClockIn
+    debug = True
+    dry_run = True
+Step 2: 取得登入頁
+[DEBUG][get_login_token] URL: https://goodtimesdaka.com/login
+[DEBUG][get_login_token] 狀態碼: 200
+[DEBUG][get_login_token] 回應預覽:
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/fontawesome.min.css">
+<link rel="stylesheet" href="./css/login.css">
+
+
+
+<form method="POST" action="https://goodtimesdaka.com/login" class="login">
+    <input type="hidden" name="_token" value="emvmSxK4GwtgSn...(truncated)
+[DEBUG][get_login_token] 目前 cookies: {'XSRF-TOKEN': 'eyJpdiI6IjFEaXpEd1poYXNJa2szZHRMU3ppV0E9PSIsInZhbHVlIjoiUkdKRlJ5TDV3aFRSSFNYTWNoMENYTUEvTExOdElFSjYxNEJzaUFVNGlhQTlFSU9uMUNiVEpEcUJsWnZsRWI1M1hra0VTbjl0VHpObEt5Rm5PYnIyUnpOS0R3SERwdjJnSHpyOEpDVldXbjV2KzVkaUpvTjRpVlJEckNYbFZTSE8iLCJtYWMiOiI0Y2RmYWVhNGFhMGIyZThlMDg3NzUyMDliZDA1ZjJmYWViMTE3NWE3YTM4MjJlY2YxNjBlOGE4Y2M1MmYzYTNlIiwidGFnIjoiIn0%3D', '_session': 'eyJpdiI6InJvNWdLb3VLOHVSRFhmNWc1aDE1TUE9PSIsInZhbHVlIjoiNGZRcmxQMkwwRVdzZFNKenp5SUZDTkQzdXMyWFV3V1FhYzRtcGdzV05VMFZrQVJKd2lobERMU1Y0b0Jacmx3bjFDV2RnS25SNVNpL0FDNUM1U2txcFZoQ3ZKYnBpbXlyQUdHcytKS1VVN2JadlYvWEtpQlVVY255L3hNaFU1V08iLCJtYWMiOiJhOTNlYWM4NjM1ODUyYjMyZWE2ZTM1ZWI2NzU1Mzk3Mjk4M2FjMWRmZjI1YTA4OWI1MzQxODUwNjNiMWI1YWRkIiwidGFnIjoiIn0%3D'}
+[DEBUG][get_login_token] 抓到 login _token: emvmSxK4GwtgSnvGykMFsGTFVPynhvUKJK2das27
+[DEBUG][get_login_token] 解析到 login action URL: https://goodtimesdaka.com/login
+[✅ 成功] code=0 msg=操作成功
+[DEBUG] Step 2 結束時 context內容:
+    CLOCK_USERNAME = E2511A
+    CLOCK_PASSWORD = ******
+    CLOCK_LOGIN_URL = https://goodtimesdaka.com/login
+    CLOCK_IN_URL = https://goodtimesdaka.com/attendance/clock_in
+    CLOCK_OUT_URL = https://goodtimesdaka.com/attendance/clock_out
+    CLOCK_PAGE_URL = https://goodtimesdaka.com/attendance/ClockIn
+    debug = True
+    dry_run = True
+    login_token = emvmSxK4GwtgSnvGykMFsGTFVPynhvUKJK2das27
+    login_action_url = https://goodtimesdaka.com/login
+Step 3: 登入
+[DEBUG][login_task] POST URL: https://goodtimesdaka.com/login
+[DEBUG][login_task] payload: {'_token': '***MASKED***', 'username': 'E2511A', 'password': '***MASKED***'}
+[DEBUG][login_task] headers: {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36', 'Accept-Language': 'zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7', 'Content-Type': 'application/x-www-form-urlencoded', 'Referer': 'https://goodtimesdaka.com/login', 'Origin': 'https://goodtimesdaka.com'}
+[DEBUG][login_task] 目前 cookies: {'XSRF-TOKEN': 'eyJpdiI6IjFEaXpEd1poYXNJa2szZHRMU3ppV0E9PSIsInZhbHVlIjoiUkdKRlJ5TDV3aFRSSFNYTWNoMENYTUEvTExOdElFSjYxNEJzaUFVNGlhQTlFSU9uMUNiVEpEcUJsWnZsRWI1M1hra0VTbjl0VHpObEt5Rm5PYnIyUnpOS0R3SERwdjJnSHpyOEpDVldXbjV2KzVkaUpvTjRpVlJEckNYbFZTSE8iLCJtYWMiOiI0Y2RmYWVhNGFhMGIyZThlMDg3NzUyMDliZDA1ZjJmYWViMTE3NWE3YTM4MjJlY2YxNjBlOGE4Y2M1MmYzYTNlIiwidGFnIjoiIn0%3D', '_session': 'eyJpdiI6InJvNWdLb3VLOHVSRFhmNWc1aDE1TUE9PSIsInZhbHVlIjoiNGZRcmxQMkwwRVdzZFNKenp5SUZDTkQzdXMyWFV3V1FhYzRtcGdzV05VMFZrQVJKd2lobERMU1Y0b0Jacmx3bjFDV2RnS25SNVNpL0FDNUM1U2txcFZoQ3ZKYnBpbXlyQUdHcytKS1VVN2JadlYvWEtpQlVVY255L3hNaFU1V08iLCJtYWMiOiJhOTNlYWM4NjM1ODUyYjMyZWE2ZTM1ZWI2NzU1Mzk3Mjk4M2FjMWRmZjI1YTA4OWI1MzQxODUwNjNiMWI1YWRkIiwidGFnIjoiIn0%3D'}
+[DEBUG][login_task] 目前 cookies: {'XSRF-TOKEN': 'eyJpdiI6Im9NQ2pXQnd0K0hZU1Ria2ZEWUs2WlE9PSIsInZhbHVlIjoieHErR1hFY1JtaWtYV0QraHpSNzRjMXU2OGV6c1lLU290eFpqU3N5bU5pWHhIZ3RTSlkxL2VQV3VtZlJsMDJSeFcvaHBXNUlSL0h0SWt3WkRCYWJOK09SN0h5ZDJrd3JnaTl0ME9JUjFXeEZGVWlQQlNORHVEUENSZlp6c0t1VlQiLCJtYWMiOiJkYzg5ZDdkZTVjZjcxYjEzNDY2OWM1MGQ1MTBjN2U3Zjc2ZjhjMmUxYTA5M2QzODY3ZWI0OWE1NDk0M2VjODA2IiwidGFnIjoiIn0%3D', '_session': 'eyJpdiI6IjhGUXAvbnBSdjVRNVVWeEVvK1R4bUE9PSIsInZhbHVlIjoiZUdOY2VlVjFsa2ZWZk1YcmdkMzE2VGdDVnlzNlRoYWJtQWZ6OTEyZlMzUm5qbW4zdDhDS2NHSDZ5SFZ4eDVNZUNycjR4TFpRVU14TW1KTlNyQlVYOWg1VTFNdmtsak5USEs0ZFc4TWpjSVNIY1ptU2MwOXdZdDNFUitTaHV3cGwiLCJtYWMiOiJlNjU5YWM3ZmM3NzA5Mjc0YTkzYTAwZGVhOTQzMWQ2NzBmMTU4NTI5MDk2MjQwNmRhZWRjMjYwZWVjNzc4Zjk1IiwidGFnIjoiIn0%3D'}
+[DEBUG][login_task] 狀態碼: 200
+[DEBUG][login_task] 回應內容預覽:
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>打卡系统</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="../vendor/fontawesom...(truncated)
+[DEBUG][login_task] 登入成功，Session 已保存 Cookies
+[✅ 成功] code=0 msg=操作成功
+[DEBUG] Step 3 結束時 context內容:
+    CLOCK_USERNAME = E2511A
+    CLOCK_PASSWORD = ******
+    CLOCK_LOGIN_URL = https://goodtimesdaka.com/login
+    CLOCK_IN_URL = https://goodtimesdaka.com/attendance/clock_in
+    CLOCK_OUT_URL = https://goodtimesdaka.com/attendance/clock_out
+    CLOCK_PAGE_URL = https://goodtimesdaka.com/attendance/ClockIn
+    debug = True
+    dry_run = True
+    login_token = emvmSxK4GwtgSnvGykMFsGTFVPynhvUKJK2das27
+    login_action_url = https://goodtimesdaka.com/login
+Step 4: 抓取打卡 _token
+[DEBUG][get_clockin_token] URL: https://goodtimesdaka.com/attendance/ClockIn
+[DEBUG][get_clockin_token] 狀態碼: 200
+[DEBUG][get_clockin_token] 回應預覽:
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    ...(truncated)
+[DEBUG][get_clockin_token] 目前 cookies: {'XSRF-TOKEN': 'eyJpdiI6IjJVWnUyWTNMQzRTeEtOS2dLR1RIN1E9PSIsInZhbHVlIjoidlV5OVN2TUQwTFlZeWtzUHpHUU4ybyszV01XYjdXb0lTYnNXYkF6Z1ptV1JIN0F4cVBwemRtMDhBRENKK1FVakFjMDdZWTVWaUFvOEZqeWtSNzA1RytLS053Y3MybjQ0ZVM2YlFUY0tIUmlpUGF1eUlCaUxWL09vSHhMdXY5SWkiLCJtYWMiOiI1YzFiNzQxNzQxZmVkNGJjMmMxMjIwNzliMTRhMWI2ZjRjZDVlNzNlMjUwOTNmM2ZlZjExNjczN2ZlOTdjMjQ4IiwidGFnIjoiIn0%3D', '_session': 'eyJpdiI6InBWS1VuZVF0aitPL0tZTjZhYkY5N3c9PSIsInZhbHVlIjoiWEtiNEhzNWtIbW9SU25aaEhhU3BQT2drMzdqZUNYR3pkOE5qL0RxYjFHNUI1SXFicTg1dlJWZTFyLzZYYzlGb2VFc1dleUMxZWI4OGpGZ1BGS0RjcHNhMW56N2lpQ200blIyd3FvRVBqNXV3TEUyTEtLcUJQYnhzK0tqMklBZ2IiLCJtYWMiOiIwZWYyM2VlOGUxNzc4MzkzMjUwMTc0MTlmNDNiNjc0N2E0MzY0ODgzMjEwYzUwZWIxNzE5NmY2ODFjOTY3NWU0IiwidGFnIjoiIn0%3D'}
+[DEBUG][get_clockin_token] 抓到的 _token: mHFVErpObPstm3jmBd0uuLtZCDSa8G5DuBZt8Pjo
+[DEBUG][get_clockin_token] 當前 cookies: {'XSRF-TOKEN': 'eyJpdiI6IjJVWnUyWTNMQzRTeEtOS2dLR1RIN1E9PSIsInZhbHVlIjoidlV5OVN2TUQwTFlZeWtzUHpHUU4ybyszV01XYjdXb0lTYnNXYkF6Z1ptV1JIN0F4cVBwemRtMDhBRENKK1FVakFjMDdZWTVWaUFvOEZqeWtSNzA1RytLS053Y3MybjQ0ZVM2YlFUY0tIUmlpUGF1eUlCaUxWL09vSHhMdXY5SWkiLCJtYWMiOiI1YzFiNzQxNzQxZmVkNGJjMmMxMjIwNzliMTRhMWI2ZjRjZDVlNzNlMjUwOTNmM2ZlZjExNjczN2ZlOTdjMjQ4IiwidGFnIjoiIn0%3D', '_session': 'eyJpdiI6InBWS1VuZVF0aitPL0tZTjZhYkY5N3c9PSIsInZhbHVlIjoiWEtiNEhzNWtIbW9SU25aaEhhU3BQT2drMzdqZUNYR3pkOE5qL0RxYjFHNUI1SXFicTg1dlJWZTFyLzZYYzlGb2VFc1dleUMxZWI4OGpGZ1BGS0RjcHNhMW56N2lpQ200blIyd3FvRVBqNXV3TEUyTEtLcUJQYnhzK0tqMklBZ2IiLCJtYWMiOiIwZWYyM2VlOGUxNzc4MzkzMjUwMTc0MTlmNDNiNjc0N2E0MzY0ODgzMjEwYzUwZWIxNzE5NmY2ODFjOTY3NWU0IiwidGFnIjoiIn0%3D'}
+[✅ 成功] code=0 msg=操作成功
+[DEBUG] Step 4 結束時 context內容:
+    CLOCK_USERNAME = E2511A
+    CLOCK_PASSWORD = ******
+    CLOCK_LOGIN_URL = https://goodtimesdaka.com/login
+    CLOCK_IN_URL = https://goodtimesdaka.com/attendance/clock_in
+    CLOCK_OUT_URL = https://goodtimesdaka.com/attendance/clock_out
+    CLOCK_PAGE_URL = https://goodtimesdaka.com/attendance/ClockIn
+    debug = True
+    dry_run = True
+    login_token = emvmSxK4GwtgSnvGykMFsGTFVPynhvUKJK2das27
+    login_action_url = https://goodtimesdaka.com/login
+    clockin_token = mHFVErpObPstm3jmBd0uuLtZCDSa8G5DuBZt8Pjo
+Step 5: 取得當前時間
+[DEBUG][time_check_task] 現在台北時間: 2026-06-29 09:53:41
+[✅ 成功] code=0 msg=操作成功
+[DEBUG] Step 5 結束時 context內容:
+    CLOCK_USERNAME = E2511A
+    CLOCK_PASSWORD = ******
+    CLOCK_LOGIN_URL = https://goodtimesdaka.com/login
+    CLOCK_IN_URL = https://goodtimesdaka.com/attendance/clock_in
+    CLOCK_OUT_URL = https://goodtimesdaka.com/attendance/clock_out
+    CLOCK_PAGE_URL = https://goodtimesdaka.com/attendance/ClockIn
+    debug = True
+    dry_run = True
+    login_token = emvmSxK4GwtgSnvGykMFsGTFVPynhvUKJK2das27
+    login_action_url = https://goodtimesdaka.com/login
+    clockin_token = mHFVErpObPstm3jmBd0uuLtZCDSa8G5DuBZt8Pjo
+    current_time = 2026-06-29 09:53:41.848735+08:00
+Step 6: 選擇打卡路徑
+[DEBUG][path_select_task] 選擇的打卡路徑: https://goodtimesdaka.com/attendance/clock_in
+[✅ 成功] code=0 msg=操作成功
+[DEBUG] Step 6 結束時 context內容:
+    CLOCK_USERNAME = E2511A
+    CLOCK_PASSWORD = ******
+    CLOCK_LOGIN_URL = https://goodtimesdaka.com/login
+    CLOCK_PAGE_URL = https://goodtimesdaka.com/attendance/ClockIn
+    debug = True
+    dry_run = True
+    login_token = emvmSxK4GwtgSnvGykMFsGTFVPynhvUKJK2das27
+    login_action_url = https://goodtimesdaka.com/login
+    clockin_token = mHFVErpObPstm3jmBd0uuLtZCDSa8G5DuBZt8Pjo
+    current_time = 2026-06-29 09:53:41.848735+08:00
+    clock_url = https://goodtimesdaka.com/attendance/clock_in
+[✅ 成功] code=0 msg=操作成功
+[✅ 打卡訊息] 流程成功（dry run 模式，未執行打卡動作）
+===Step 4: 呼叫 Telegram 控制器===
+Step 1: 建立 Telegram 專用 context
+[✅ 成功] code=0 msg=操作成功
+[DEBUG] Step 1 結束時 context內容:
+    debug = True
+    schedule_controller_code = 3002
+    login_controller_code = 0
+    clockin_msg = 流程成功（dry run 模式，未執行打卡動作）
+    TELEGRAM_BOT_TOKEN = 8404274537:AAF65nsC7o3xdQgchCb___ula-vNmkGCa94
+    TELEGRAM_CHAT_ID = 6184827725
+    ENABLE_TELEGRAM = True
+    PAGES_BASE_URL = https://govovo12.github.io/clockin-automation
+Step 2: 翻譯代碼為訊息字串
+[✅ 成功] code=0 msg=操作成功
+[DEBUG] Step 2 結束時 context內容:
+    debug = True
+    schedule_controller_code = 今日為工作日，正常打卡
+    login_controller_code = 打卡成功
+    clockin_msg = 流程成功（dry run 模式，未執行打卡動作）
+    TELEGRAM_BOT_TOKEN = 8404274537:AAF65nsC7o3xdQgchCb___ula-vNmkGCa94
+    TELEGRAM_CHAT_ID = 6184827725
+    ENABLE_TELEGRAM = True
+    PAGES_BASE_URL = https://govovo12.github.io/clockin-automation
+Step 3: 發送 Telegram 通知
+[✅ 成功] code=0 msg=操作成功
+[DEBUG] Step 3 結束時 context內容:
+    debug = True
+    schedule_controller_code = 今日為工作日，正常打卡
+    login_controller_code = 打卡成功
+    clockin_msg = 流程成功（dry run 模式，未執行打卡動作）
+    TELEGRAM_BOT_TOKEN = 8404274537:AAF65nsC7o3xdQgchCb___ula-vNmkGCa94
+    TELEGRAM_CHAT_ID = 6184827725
+    ENABLE_TELEGRAM = True
+    PAGES_BASE_URL = https://govovo12.github.io/clockin-automation
