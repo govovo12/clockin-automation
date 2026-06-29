@@ -52,9 +52,9 @@ Step 2: 取得登入頁
 
 
 <form method="POST" action="https://goodtimesdaka.com/login" class="login">
-    <input type="hidden" name="_token" value="emvmSxK4GwtgSn...(truncated)
-[DEBUG][get_login_token] 目前 cookies: {'XSRF-TOKEN': 'eyJpdiI6IjFEaXpEd1poYXNJa2szZHRMU3ppV0E9PSIsInZhbHVlIjoiUkdKRlJ5TDV3aFRSSFNYTWNoMENYTUEvTExOdElFSjYxNEJzaUFVNGlhQTlFSU9uMUNiVEpEcUJsWnZsRWI1M1hra0VTbjl0VHpObEt5Rm5PYnIyUnpOS0R3SERwdjJnSHpyOEpDVldXbjV2KzVkaUpvTjRpVlJEckNYbFZTSE8iLCJtYWMiOiI0Y2RmYWVhNGFhMGIyZThlMDg3NzUyMDliZDA1ZjJmYWViMTE3NWE3YTM4MjJlY2YxNjBlOGE4Y2M1MmYzYTNlIiwidGFnIjoiIn0%3D', '_session': 'eyJpdiI6InJvNWdLb3VLOHVSRFhmNWc1aDE1TUE9PSIsInZhbHVlIjoiNGZRcmxQMkwwRVdzZFNKenp5SUZDTkQzdXMyWFV3V1FhYzRtcGdzV05VMFZrQVJKd2lobERMU1Y0b0Jacmx3bjFDV2RnS25SNVNpL0FDNUM1U2txcFZoQ3ZKYnBpbXlyQUdHcytKS1VVN2JadlYvWEtpQlVVY255L3hNaFU1V08iLCJtYWMiOiJhOTNlYWM4NjM1ODUyYjMyZWE2ZTM1ZWI2NzU1Mzk3Mjk4M2FjMWRmZjI1YTA4OWI1MzQxODUwNjNiMWI1YWRkIiwidGFnIjoiIn0%3D'}
-[DEBUG][get_login_token] 抓到 login _token: emvmSxK4GwtgSnvGykMFsGTFVPynhvUKJK2das27
+    <input type="hidden" name="_token" value="s2sU4MwEzzzhR0...(truncated)
+[DEBUG][get_login_token] 目前 cookies: {'XSRF-TOKEN': 'eyJpdiI6IlBmeUx1ckJoR21GUnhKUE15bWQ4QlE9PSIsInZhbHVlIjoib1U2WWtYWFV0NnM2dnhqV3BWd2ZhUldBZU0vUHVuZncwUG10Mys3bFJIZUUrVll4bW94T2F5Z0xwYXBVTzdmT2JZTGNsZTZIRHRXalFkSVY5bVRJNlZsekgzdXJkRE1sYktYZXorQmtQU2NqN214Z3BFQktzd2kyVXlmbFU4OWMiLCJtYWMiOiJmNjViNmUxNTBhMDQ0MTFiMzAzMmUwZjhkZWQzNTM4NzYwZmUyMTg5YTk1N2Y2NjkwNzQ0ZDI3NmIzY2UxZWQyIiwidGFnIjoiIn0%3D', '_session': 'eyJpdiI6ImVpOGF1TnMrbm5xbHZHWmoyS1Vjb1E9PSIsInZhbHVlIjoiTWFMQjNIVlZoNDljZ0ZZbzAwQU10d0E0U0FvQUJPMW92N0RUemlrbFdXMytvVUwyTEoxTXVyazJCTUY0QkdBbkR2ZjdPcnBiUnBpbW1ud2lTd29tVCtmUkNnWWkzZWUwcFFTeW5BbFE5UlFmaENHUFAvN3g4U0pxT3FwRFVlQ0oiLCJtYWMiOiI2M2M1NzIwOTMyYjhhNWJjNzhkOTA3MmU3ZmNkYmUzNTU3NzM0NjhiNjY2NTNiNjI0YzgzZDA4OWRhZWFmODUwIiwidGFnIjoiIn0%3D'}
+[DEBUG][get_login_token] 抓到 login _token: s2sU4MwEzzzhR0urGT00i79nBoO6rzVNXArN7WmS
 [DEBUG][get_login_token] 解析到 login action URL: https://goodtimesdaka.com/login
 [✅ 成功] code=0 msg=操作成功
 [DEBUG] Step 2 結束時 context內容:
@@ -66,14 +66,14 @@ Step 2: 取得登入頁
     CLOCK_PAGE_URL = https://goodtimesdaka.com/attendance/ClockIn
     debug = True
     dry_run = True
-    login_token = emvmSxK4GwtgSnvGykMFsGTFVPynhvUKJK2das27
+    login_token = s2sU4MwEzzzhR0urGT00i79nBoO6rzVNXArN7WmS
     login_action_url = https://goodtimesdaka.com/login
 Step 3: 登入
 [DEBUG][login_task] POST URL: https://goodtimesdaka.com/login
 [DEBUG][login_task] payload: {'_token': '***MASKED***', 'username': 'E2511A', 'password': '***MASKED***'}
 [DEBUG][login_task] headers: {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36', 'Accept-Language': 'zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7', 'Content-Type': 'application/x-www-form-urlencoded', 'Referer': 'https://goodtimesdaka.com/login', 'Origin': 'https://goodtimesdaka.com'}
-[DEBUG][login_task] 目前 cookies: {'XSRF-TOKEN': 'eyJpdiI6IjFEaXpEd1poYXNJa2szZHRMU3ppV0E9PSIsInZhbHVlIjoiUkdKRlJ5TDV3aFRSSFNYTWNoMENYTUEvTExOdElFSjYxNEJzaUFVNGlhQTlFSU9uMUNiVEpEcUJsWnZsRWI1M1hra0VTbjl0VHpObEt5Rm5PYnIyUnpOS0R3SERwdjJnSHpyOEpDVldXbjV2KzVkaUpvTjRpVlJEckNYbFZTSE8iLCJtYWMiOiI0Y2RmYWVhNGFhMGIyZThlMDg3NzUyMDliZDA1ZjJmYWViMTE3NWE3YTM4MjJlY2YxNjBlOGE4Y2M1MmYzYTNlIiwidGFnIjoiIn0%3D', '_session': 'eyJpdiI6InJvNWdLb3VLOHVSRFhmNWc1aDE1TUE9PSIsInZhbHVlIjoiNGZRcmxQMkwwRVdzZFNKenp5SUZDTkQzdXMyWFV3V1FhYzRtcGdzV05VMFZrQVJKd2lobERMU1Y0b0Jacmx3bjFDV2RnS25SNVNpL0FDNUM1U2txcFZoQ3ZKYnBpbXlyQUdHcytKS1VVN2JadlYvWEtpQlVVY255L3hNaFU1V08iLCJtYWMiOiJhOTNlYWM4NjM1ODUyYjMyZWE2ZTM1ZWI2NzU1Mzk3Mjk4M2FjMWRmZjI1YTA4OWI1MzQxODUwNjNiMWI1YWRkIiwidGFnIjoiIn0%3D'}
-[DEBUG][login_task] 目前 cookies: {'XSRF-TOKEN': 'eyJpdiI6Im9NQ2pXQnd0K0hZU1Ria2ZEWUs2WlE9PSIsInZhbHVlIjoieHErR1hFY1JtaWtYV0QraHpSNzRjMXU2OGV6c1lLU290eFpqU3N5bU5pWHhIZ3RTSlkxL2VQV3VtZlJsMDJSeFcvaHBXNUlSL0h0SWt3WkRCYWJOK09SN0h5ZDJrd3JnaTl0ME9JUjFXeEZGVWlQQlNORHVEUENSZlp6c0t1VlQiLCJtYWMiOiJkYzg5ZDdkZTVjZjcxYjEzNDY2OWM1MGQ1MTBjN2U3Zjc2ZjhjMmUxYTA5M2QzODY3ZWI0OWE1NDk0M2VjODA2IiwidGFnIjoiIn0%3D', '_session': 'eyJpdiI6IjhGUXAvbnBSdjVRNVVWeEVvK1R4bUE9PSIsInZhbHVlIjoiZUdOY2VlVjFsa2ZWZk1YcmdkMzE2VGdDVnlzNlRoYWJtQWZ6OTEyZlMzUm5qbW4zdDhDS2NHSDZ5SFZ4eDVNZUNycjR4TFpRVU14TW1KTlNyQlVYOWg1VTFNdmtsak5USEs0ZFc4TWpjSVNIY1ptU2MwOXdZdDNFUitTaHV3cGwiLCJtYWMiOiJlNjU5YWM3ZmM3NzA5Mjc0YTkzYTAwZGVhOTQzMWQ2NzBmMTU4NTI5MDk2MjQwNmRhZWRjMjYwZWVjNzc4Zjk1IiwidGFnIjoiIn0%3D'}
+[DEBUG][login_task] 目前 cookies: {'XSRF-TOKEN': 'eyJpdiI6IlBmeUx1ckJoR21GUnhKUE15bWQ4QlE9PSIsInZhbHVlIjoib1U2WWtYWFV0NnM2dnhqV3BWd2ZhUldBZU0vUHVuZncwUG10Mys3bFJIZUUrVll4bW94T2F5Z0xwYXBVTzdmT2JZTGNsZTZIRHRXalFkSVY5bVRJNlZsekgzdXJkRE1sYktYZXorQmtQU2NqN214Z3BFQktzd2kyVXlmbFU4OWMiLCJtYWMiOiJmNjViNmUxNTBhMDQ0MTFiMzAzMmUwZjhkZWQzNTM4NzYwZmUyMTg5YTk1N2Y2NjkwNzQ0ZDI3NmIzY2UxZWQyIiwidGFnIjoiIn0%3D', '_session': 'eyJpdiI6ImVpOGF1TnMrbm5xbHZHWmoyS1Vjb1E9PSIsInZhbHVlIjoiTWFMQjNIVlZoNDljZ0ZZbzAwQU10d0E0U0FvQUJPMW92N0RUemlrbFdXMytvVUwyTEoxTXVyazJCTUY0QkdBbkR2ZjdPcnBiUnBpbW1ud2lTd29tVCtmUkNnWWkzZWUwcFFTeW5BbFE5UlFmaENHUFAvN3g4U0pxT3FwRFVlQ0oiLCJtYWMiOiI2M2M1NzIwOTMyYjhhNWJjNzhkOTA3MmU3ZmNkYmUzNTU3NzM0NjhiNjY2NTNiNjI0YzgzZDA4OWRhZWFmODUwIiwidGFnIjoiIn0%3D'}
+[DEBUG][login_task] 目前 cookies: {'XSRF-TOKEN': 'eyJpdiI6Imw1NjNmbC9JVGpKZ2FtQ0VmOW1VZEE9PSIsInZhbHVlIjoiblA2UHlscHhlQWE5VWNHUVFiZVBBR3BPbmY5dHVXVW00dXBReVFmSXZka0Y0T3ZsY3RTS0l4ekdYRjBSM3NKU3pxSDVkNTk5TkxJQlFWMnFDSzh5bjBHOFF5dmdvZDBFbmYzajdjMGdVMG04ZDc5VXV0cUNaQzBidW5VQmRVK2UiLCJtYWMiOiJhMjExNDEyZWJiYjcwZDg1MTgxZDNjYmE2ZmFkN2ZiYTg2NjY3OGQ0NTQ0ODdlZDNhNTAxMjFjYmQ3M2E1ODAxIiwidGFnIjoiIn0%3D', '_session': 'eyJpdiI6IjhmdlllSkdRaFVKNDNHalVyQUprYUE9PSIsInZhbHVlIjoiT0o0M1JFSFppVnNqbFpkZExNY3lRZ3pVaytmSkJXZ3RuVEpHVFRVTXZRc3Q4dzZQRC9sVndsMTBoeEpjTmEvOEo2TWcwc2h6bDhYLzBOaVluWndUNy9hMkc1enZydWszSTdCRkF5NDFIOUpVZTYwWWEwa2lvWktLanYrSmtUR20iLCJtYWMiOiI5ZTI2NWI0NmRmNDY2ZjNkYmM1NzlmMjY1ZmJlZjJlYTEyZWUzY2RmYWM3MmJiNGU4NGE2MmU1MTg3MzBhMmMzIiwidGFnIjoiIn0%3D'}
 [DEBUG][login_task] 狀態碼: 200
 [DEBUG][login_task] 回應內容預覽:
 <!DOCTYPE html>
@@ -102,7 +102,7 @@ Step 3: 登入
     CLOCK_PAGE_URL = https://goodtimesdaka.com/attendance/ClockIn
     debug = True
     dry_run = True
-    login_token = emvmSxK4GwtgSnvGykMFsGTFVPynhvUKJK2das27
+    login_token = s2sU4MwEzzzhR0urGT00i79nBoO6rzVNXArN7WmS
     login_action_url = https://goodtimesdaka.com/login
 Step 4: 抓取打卡 _token
 [DEBUG][get_clockin_token] URL: https://goodtimesdaka.com/attendance/ClockIn
@@ -120,9 +120,9 @@ Step 4: 抓取打卡 _token
     <meta name="author" content="">
 
     ...(truncated)
-[DEBUG][get_clockin_token] 目前 cookies: {'XSRF-TOKEN': 'eyJpdiI6IjJVWnUyWTNMQzRTeEtOS2dLR1RIN1E9PSIsInZhbHVlIjoidlV5OVN2TUQwTFlZeWtzUHpHUU4ybyszV01XYjdXb0lTYnNXYkF6Z1ptV1JIN0F4cVBwemRtMDhBRENKK1FVakFjMDdZWTVWaUFvOEZqeWtSNzA1RytLS053Y3MybjQ0ZVM2YlFUY0tIUmlpUGF1eUlCaUxWL09vSHhMdXY5SWkiLCJtYWMiOiI1YzFiNzQxNzQxZmVkNGJjMmMxMjIwNzliMTRhMWI2ZjRjZDVlNzNlMjUwOTNmM2ZlZjExNjczN2ZlOTdjMjQ4IiwidGFnIjoiIn0%3D', '_session': 'eyJpdiI6InBWS1VuZVF0aitPL0tZTjZhYkY5N3c9PSIsInZhbHVlIjoiWEtiNEhzNWtIbW9SU25aaEhhU3BQT2drMzdqZUNYR3pkOE5qL0RxYjFHNUI1SXFicTg1dlJWZTFyLzZYYzlGb2VFc1dleUMxZWI4OGpGZ1BGS0RjcHNhMW56N2lpQ200blIyd3FvRVBqNXV3TEUyTEtLcUJQYnhzK0tqMklBZ2IiLCJtYWMiOiIwZWYyM2VlOGUxNzc4MzkzMjUwMTc0MTlmNDNiNjc0N2E0MzY0ODgzMjEwYzUwZWIxNzE5NmY2ODFjOTY3NWU0IiwidGFnIjoiIn0%3D'}
-[DEBUG][get_clockin_token] 抓到的 _token: mHFVErpObPstm3jmBd0uuLtZCDSa8G5DuBZt8Pjo
-[DEBUG][get_clockin_token] 當前 cookies: {'XSRF-TOKEN': 'eyJpdiI6IjJVWnUyWTNMQzRTeEtOS2dLR1RIN1E9PSIsInZhbHVlIjoidlV5OVN2TUQwTFlZeWtzUHpHUU4ybyszV01XYjdXb0lTYnNXYkF6Z1ptV1JIN0F4cVBwemRtMDhBRENKK1FVakFjMDdZWTVWaUFvOEZqeWtSNzA1RytLS053Y3MybjQ0ZVM2YlFUY0tIUmlpUGF1eUlCaUxWL09vSHhMdXY5SWkiLCJtYWMiOiI1YzFiNzQxNzQxZmVkNGJjMmMxMjIwNzliMTRhMWI2ZjRjZDVlNzNlMjUwOTNmM2ZlZjExNjczN2ZlOTdjMjQ4IiwidGFnIjoiIn0%3D', '_session': 'eyJpdiI6InBWS1VuZVF0aitPL0tZTjZhYkY5N3c9PSIsInZhbHVlIjoiWEtiNEhzNWtIbW9SU25aaEhhU3BQT2drMzdqZUNYR3pkOE5qL0RxYjFHNUI1SXFicTg1dlJWZTFyLzZYYzlGb2VFc1dleUMxZWI4OGpGZ1BGS0RjcHNhMW56N2lpQ200blIyd3FvRVBqNXV3TEUyTEtLcUJQYnhzK0tqMklBZ2IiLCJtYWMiOiIwZWYyM2VlOGUxNzc4MzkzMjUwMTc0MTlmNDNiNjc0N2E0MzY0ODgzMjEwYzUwZWIxNzE5NmY2ODFjOTY3NWU0IiwidGFnIjoiIn0%3D'}
+[DEBUG][get_clockin_token] 目前 cookies: {'XSRF-TOKEN': 'eyJpdiI6IlF6eUN5RDh5Q09iNTNtUURkbFNVR2c9PSIsInZhbHVlIjoiMXVXYUFLU3JuOXJwZnF2THY4Q2JLM2gwUzlEc2svdnEycmdxRzJjR21qME1xcGFKMHVIYnFmenByTCtuNmQvL1JzRVNoNE03NHc5d3BzK09Bb0NadEcwNkJkcVlZZGsyTlc5eHlWS0ZPR2RzbXJxcUp1SklBOGU1bTJVODNOdnMiLCJtYWMiOiI3NmIwNmYxN2I4NGI3M2RkNGRlMzgyNzEyNGVlMzUzZjQzMDM5NGE3Y2FhYjgwYzJjMWIxMzVlOWYxNjdkYTJiIiwidGFnIjoiIn0%3D', '_session': 'eyJpdiI6IkM5Mi9LTW5RVThYVjhKYXNDVGxmSXc9PSIsInZhbHVlIjoiMHdRU05tUXM5VlVjNE53YUpkMGEwU21WZGxwa2FwWld4K3dLczQrTU5kcGFiZkFENWdiTEhjZEFJSXpkTW50TFUwMHU1dTZ3L2xFVllwWU85STFmWDJBcEwvdmo5akVWTW1HOStlRTFBMXhHY3p4eHFFRENTSkN2QTlmalcyMGwiLCJtYWMiOiI3YzFiZGMxYjY0M2YwNzFjMDQ2MjFmYjE5NmJhYTA3NGEzNTY2YzcwZTllNDAyMGIzNmIwNmQyNzA2Y2IyMTc4IiwidGFnIjoiIn0%3D'}
+[DEBUG][get_clockin_token] 抓到的 _token: YNvxTjzZSfBhdequrXjKeaPiqvxBYo1VFC8KspOA
+[DEBUG][get_clockin_token] 當前 cookies: {'XSRF-TOKEN': 'eyJpdiI6IlF6eUN5RDh5Q09iNTNtUURkbFNVR2c9PSIsInZhbHVlIjoiMXVXYUFLU3JuOXJwZnF2THY4Q2JLM2gwUzlEc2svdnEycmdxRzJjR21qME1xcGFKMHVIYnFmenByTCtuNmQvL1JzRVNoNE03NHc5d3BzK09Bb0NadEcwNkJkcVlZZGsyTlc5eHlWS0ZPR2RzbXJxcUp1SklBOGU1bTJVODNOdnMiLCJtYWMiOiI3NmIwNmYxN2I4NGI3M2RkNGRlMzgyNzEyNGVlMzUzZjQzMDM5NGE3Y2FhYjgwYzJjMWIxMzVlOWYxNjdkYTJiIiwidGFnIjoiIn0%3D', '_session': 'eyJpdiI6IkM5Mi9LTW5RVThYVjhKYXNDVGxmSXc9PSIsInZhbHVlIjoiMHdRU05tUXM5VlVjNE53YUpkMGEwU21WZGxwa2FwWld4K3dLczQrTU5kcGFiZkFENWdiTEhjZEFJSXpkTW50TFUwMHU1dTZ3L2xFVllwWU85STFmWDJBcEwvdmo5akVWTW1HOStlRTFBMXhHY3p4eHFFRENTSkN2QTlmalcyMGwiLCJtYWMiOiI3YzFiZGMxYjY0M2YwNzFjMDQ2MjFmYjE5NmJhYTA3NGEzNTY2YzcwZTllNDAyMGIzNmIwNmQyNzA2Y2IyMTc4IiwidGFnIjoiIn0%3D'}
 [✅ 成功] code=0 msg=操作成功
 [DEBUG] Step 4 結束時 context內容:
     CLOCK_USERNAME = E2511A
@@ -133,11 +133,11 @@ Step 4: 抓取打卡 _token
     CLOCK_PAGE_URL = https://goodtimesdaka.com/attendance/ClockIn
     debug = True
     dry_run = True
-    login_token = emvmSxK4GwtgSnvGykMFsGTFVPynhvUKJK2das27
+    login_token = s2sU4MwEzzzhR0urGT00i79nBoO6rzVNXArN7WmS
     login_action_url = https://goodtimesdaka.com/login
-    clockin_token = mHFVErpObPstm3jmBd0uuLtZCDSa8G5DuBZt8Pjo
+    clockin_token = YNvxTjzZSfBhdequrXjKeaPiqvxBYo1VFC8KspOA
 Step 5: 取得當前時間
-[DEBUG][time_check_task] 現在台北時間: 2026-06-29 09:53:41
+[DEBUG][time_check_task] 現在台北時間: 2026-06-29 10:01:49
 [✅ 成功] code=0 msg=操作成功
 [DEBUG] Step 5 結束時 context內容:
     CLOCK_USERNAME = E2511A
@@ -148,10 +148,10 @@ Step 5: 取得當前時間
     CLOCK_PAGE_URL = https://goodtimesdaka.com/attendance/ClockIn
     debug = True
     dry_run = True
-    login_token = emvmSxK4GwtgSnvGykMFsGTFVPynhvUKJK2das27
+    login_token = s2sU4MwEzzzhR0urGT00i79nBoO6rzVNXArN7WmS
     login_action_url = https://goodtimesdaka.com/login
-    clockin_token = mHFVErpObPstm3jmBd0uuLtZCDSa8G5DuBZt8Pjo
-    current_time = 2026-06-29 09:53:41.848735+08:00
+    clockin_token = YNvxTjzZSfBhdequrXjKeaPiqvxBYo1VFC8KspOA
+    current_time = 2026-06-29 10:01:49.007103+08:00
 Step 6: 選擇打卡路徑
 [DEBUG][path_select_task] 選擇的打卡路徑: https://goodtimesdaka.com/attendance/clock_in
 [✅ 成功] code=0 msg=操作成功
@@ -162,10 +162,10 @@ Step 6: 選擇打卡路徑
     CLOCK_PAGE_URL = https://goodtimesdaka.com/attendance/ClockIn
     debug = True
     dry_run = True
-    login_token = emvmSxK4GwtgSnvGykMFsGTFVPynhvUKJK2das27
+    login_token = s2sU4MwEzzzhR0urGT00i79nBoO6rzVNXArN7WmS
     login_action_url = https://goodtimesdaka.com/login
-    clockin_token = mHFVErpObPstm3jmBd0uuLtZCDSa8G5DuBZt8Pjo
-    current_time = 2026-06-29 09:53:41.848735+08:00
+    clockin_token = YNvxTjzZSfBhdequrXjKeaPiqvxBYo1VFC8KspOA
+    current_time = 2026-06-29 10:01:49.007103+08:00
     clock_url = https://goodtimesdaka.com/attendance/clock_in
 [✅ 成功] code=0 msg=操作成功
 [✅ 打卡訊息] 流程成功（dry run 模式，未執行打卡動作）
